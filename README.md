@@ -7,6 +7,7 @@ Designed as an introduction to one implementation of a nearest neighbor search. 
 It was created as a teaching tool for my work at Tokyo Institute of Technology. 
 
 In addition to using 3D space instead of 2D space like Eths33/NNS_Cpp_SingleThread, it also has some multi-threading. 
+
 OpenMP used in: NNS::hash, Particle::countNeighbors, and Particle::countNeighborsN2
 
 Simplicity was preferred over performance in this code.
