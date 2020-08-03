@@ -50,8 +50,12 @@ void NNS::hash(std::vector<float> &locations) {
     float xShift = simDimx_buffered / 2.0f;
     float yShift = simDimy_buffered / 2.0f;
     float zShift = simDimz_buffered / 2.0f;
+    int i = 0;
 
-    for (int i = 0; i < particleCount; i++){
+#if PERFORMANCE_TEST && MULTI_THREAD
+#pragma omp parallel for
+#endif
+    for (i = 0; i < particleCount; i++){
 
         int yCube, xCube, zCube;
         xCube = (int)(locations[i * 3 + 0] + xShift) / cellLength;
