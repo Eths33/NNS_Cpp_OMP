@@ -37,6 +37,7 @@ void Particle::init(int particleCount, int dimx, int dimy, int dimz) {
 void Particle::countNeighborsN2(int cellLength) {
 
 	int currIdx = 0;
+
 #if PERFORMANCE_TEST && MULTI_THREAD
 #pragma omp parallel for
 #endif
@@ -71,6 +72,7 @@ void Particle::countNeighborsN2(int cellLength) {
 void Particle::countNeighbors(NNS sort) {
 
 	int currIdx = 0;
+
 #if PERFORMANCE_TEST && MULTI_THREAD
 #pragma omp parallel for
 #endif

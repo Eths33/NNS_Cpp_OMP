@@ -25,10 +25,13 @@ public:
     int cellCount;
     int nonBufferCellEstimate;
 
+    // Dimention of the simulation space in terms of cells 
+    // (Based on buffered floating point dimensions)
     int cellDimx;
     int cellDimy;
     int cellDimz;
 
+    // Dementions of the simulation space in floating point units (including buffer)
     float simDimx_buffered;
     float simDimy_buffered;
     float simDimz_buffered;
@@ -42,6 +45,15 @@ public:
 
     std::vector<KeyValuePair> cellIndexPair;
 
+private:
+    // Contains bounds checking and reporting
+    void NNS::hashingLogicDebug(int i, std::vector<float>& locations, float xShift, float yShift, float zShift);
+    // Contains bounds checking
+    void NNS::hashingLogicSafe(int i, std::vector<float>& locations, float xShift, float yShift, float zShift);
+    // Contains no error handling
+    void NNS::hashingLogicFast(int i, std::vector<float>& locations, float xShift, float yShift, float zShift);
+
+public:
     void init(int count, int dimx, int dimy, int dimz, int cell, int buffer);
 
     void hash(std::vector<float>& locations);

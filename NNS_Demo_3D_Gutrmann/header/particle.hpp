@@ -16,17 +16,27 @@ class Particle {
 public:
     // Primary particle data
     std::vector<float> locations;
+    //std::vector<float> velocity;
+    //std::vector<float> acceleration;
+
+    // Sorted particle data
     std::vector<float> sortedLoc;
+    //std::vector<float> sortedVel;
+    //std::vector<float> sortedAccel;
+
+    
+    // Counting neighboors, filler calulation -------------------
     std::vector<int> neighborCount;
 
-    /// Testing (N2 stands for n squared, O(n^2) efficiency)
+    // Testing (N2 stands for n squared, O(n^2) efficiency)
     std::vector<int> neighborCountN2;
 
-    // Checking found particles
+    // Checking found particles [Debug]
     std::vector<std::vector<int>> neighborList;
     std::vector<std::vector<int>> neighborN2List;
 
-    /// Functions
+    /// Functions -----------------------------------------------
+
     void init(int particleCount, int dimx, int dimy, int dimz);
     
     void countNeighborsN2(int cellLength);
