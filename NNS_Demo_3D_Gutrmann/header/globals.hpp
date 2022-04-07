@@ -6,7 +6,7 @@
 #ifndef HELPER_H
 #define HELPER_H
 
-#define PERFORMANCE_TEST 0
+#define PERFORMANCE_TEST 1
 #define MULTI_THREAD 1
 
 #if !PERFORMANCE_TEST
