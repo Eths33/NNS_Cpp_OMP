@@ -69,7 +69,7 @@ void Particle::countNeighborsN2(int cellLength) {
 }
 
 // Using the NNS to run "short" range algorithm
-void Particle::countNeighbors(NNS sort) {
+void Particle::countNeighbors(NNS& sort) {
 
 	int currIdx = 0;
 
